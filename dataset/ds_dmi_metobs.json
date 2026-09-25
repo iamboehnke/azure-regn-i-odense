@@ -1,0 +1,29 @@
+{
+	"name": "ds_dmi_metobs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dmi_rest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"from_ts": {
+				"type": "string"
+			},
+			"to_ts": {
+				"type": "string"
+			},
+			"station_id": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('/v2/metObs/collections/observation/items?stationId=', dataset().station_id, '&parameterId=precip_past10min&datetime=', dataset().from_ts, '/', dataset().to_ts, '&limit=10000')",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

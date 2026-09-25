@@ -1,0 +1,29 @@
+{
+	"name": "ds_bronze_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_regn",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"station_id": {
+				"type": "string"
+			},
+			"from_ts": {
+				"type": "string"
+			},
+			"to_ts": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": {}
+	}
+}
