@@ -1,0 +1,13 @@
+{
+	"name": "ls_dmi_rest",
+	"properties": {
+		"description": "DMI MetOb API",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://opendataapi.dmi.dk",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
