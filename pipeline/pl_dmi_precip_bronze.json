@@ -87,10 +87,12 @@
 		],
 		"parameters": {
 			"from_ts": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@{formatDateTime(addDays(utcnow(), -1), 'yyyy-MM-dd')}T00:00:00Z"
 			},
 			"to_ts": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@{formatDateTime(utcnow(), 'yyyy-MM-dd')}T00:00:00Z"
 			},
 			"station_ids": {
 				"type": "array",
