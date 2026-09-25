@@ -3,10 +3,82 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach1",
+				"name": "ForEachFunction",
 				"type": "ForEach",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "copy_data_function",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"paginationRules": {
+										"supportRFC5988": "true"
+									}
+								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_dmi_metobs",
+									"type": "DatasetReference",
+									"parameters": {
+										"from_ts": {
+											"value": "@pipeline().parameters.from_ts",
+											"type": "Expression"
+										},
+										"to_ts": {
+											"value": "@pipeline().parameters.to_ts",
+											"type": "Expression"
+										},
+										"station_id": "@item()"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_bronze_json",
+									"type": "DatasetReference",
+									"parameters": {
+										"station_id": "@item()",
+										"from_ts": {
+											"value": "@pipeline().parameters.from_ts",
+											"type": "Expression"
+										},
+										"to_ts": {
+											"value": "@pipeline().parameters.to_ts",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
 			}
 		],
 		"parameters": {

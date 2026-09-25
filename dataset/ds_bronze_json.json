@@ -28,7 +28,8 @@
 				"folderPath": {
 					"value": "@concat('dmi/metobs/precip/station=', dataset().station_id)",
 					"type": "Expression"
-				}
+				},
+				"fileSystem": "bronze"
 			}
 		},
 		"schema": {}
