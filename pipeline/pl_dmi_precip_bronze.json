@@ -1,6 +1,14 @@
 {
 	"name": "pl_dmi_precip_bronze",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
 		"parameters": {
 			"from_ts": {
 				"type": "string"
