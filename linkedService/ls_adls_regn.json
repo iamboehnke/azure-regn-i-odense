@@ -1,0 +1,10 @@
+{
+	"name": "ls_adls_regn",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://regniodense.dfs.core.windows.net/"
+		}
+	}
+}
