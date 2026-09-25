@@ -21,7 +21,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "bronze"
+				"fileName": {
+					"value": "@concat(formatDateTime(dataset().from_ts, 'yyyyMMdd'), '_', formatDateTime(dataset().to_ts, 'yyyyMMdd'), '.json')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('dmi/metobs/precip/station=', dataset().station_id)",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
