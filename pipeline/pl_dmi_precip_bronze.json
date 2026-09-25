@@ -1,0 +1,17 @@
+{
+	"name": "pl_dmi_precip_bronze",
+	"properties": {
+		"parameters": {
+			"from_ts": {
+				"type": "string"
+			},
+			"to_ts": {
+				"type": "string"
+			},
+			"station_ids": {
+				"type": "array"
+			}
+		},
+		"annotations": []
+	}
+}
