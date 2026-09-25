@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.station_ids",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "copy_data_function",
@@ -89,7 +93,12 @@
 				"type": "string"
 			},
 			"station_ids": {
-				"type": "array"
+				"type": "array",
+				"defaultValue": [
+					"05406",
+					"06120",
+					"06126"
+				]
 			}
 		},
 		"annotations": []
