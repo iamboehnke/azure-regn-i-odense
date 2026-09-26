@@ -23,6 +23,22 @@
 			"type": "string",
 			"defaultValue": "regniodense-free-sql-db-3139183"
 		},
+		"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_from_ts": {
+			"type": "string",
+			"defaultValue": "@concat(formatDateTime(addDays(trigger().scheduledTime, -1), 'yyyy-MM-dd'), 'T00:00:00Z')"
+		},
+		"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_to_ts": {
+			"type": "string",
+			"defaultValue": "@concat(formatDateTime(trigger().scheduledTime, 'yyyy-MM-dd'), 'T00:00:00Z')"
+		},
+		"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_station_ids": {
+			"type": "array",
+			"defaultValue": [
+				"05406",
+				"05408",
+				"06126"
+			]
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +77,15 @@
 					},
 					"ls_sql_regn_properties_typeProperties_database": {
 						"value": "[parameters('ls_sql_regn_properties_typeProperties_database')]"
+					},
+					"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_from_ts": {
+						"value": "[parameters('tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_from_ts')]"
+					},
+					"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_to_ts": {
+						"value": "[parameters('tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_to_ts')]"
+					},
+					"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_station_ids": {
+						"value": "[parameters('tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_station_ids')]"
 					}
 				}
 			},
