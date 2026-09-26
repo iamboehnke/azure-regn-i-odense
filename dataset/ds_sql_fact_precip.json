@@ -1,0 +1,47 @@
+{
+	"name": "ds_sql_fact_precip",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_regn",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "station_id",
+				"type": "varchar"
+			},
+			{
+				"name": "hour_start",
+				"type": "datetime2",
+				"scale": 0
+			},
+			{
+				"name": "precip_mm",
+				"type": "decimal",
+				"precision": 6,
+				"scale": 2
+			},
+			{
+				"name": "max_30min_mm",
+				"type": "decimal",
+				"precision": 6,
+				"scale": 2
+			},
+			{
+				"name": "heavy_rain_flag",
+				"type": "bit"
+			},
+			{
+				"name": "loaded_at",
+				"type": "datetime2",
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "fact_precip_hourly"
+		}
+	}
+}
