@@ -31,7 +31,8 @@
 			},
 			{
 				"name": "heavy_rain_flag",
-				"type": "bit"
+				"type": "tinyint",
+				"precision": 3
 			},
 			{
 				"name": "loaded_at",

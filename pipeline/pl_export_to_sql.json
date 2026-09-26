@@ -103,15 +103,8 @@
 								},
 								"sink": {
 									"name": "heavy_rain_flag",
-									"type": "Boolean",
-									"physicalType": "bit"
-								}
-							},
-							{
-								"sink": {
-									"name": "loaded_at",
-									"type": "DateTime",
-									"physicalType": "datetime2"
+									"type": "Byte",
+									"physicalType": "tinyint"
 								}
 							}
 						],
