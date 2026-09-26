@@ -1,0 +1,14 @@
+{
+	"name": "ls_sql_regn",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "regniodense.database.windows.net",
+			"database": "regniodense-free-sql-db-3139183",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
