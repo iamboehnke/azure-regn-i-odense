@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include: [main]
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.11'
+
+  - script: |
+      pip install pyspark ruff
+      ruff check . || true
+    displayName: 'Lint Python-kode'
+
+  - script: |
+      python -c "import json,glob
+      for f in glob.glob('**/*.json', recursive=True):
+          json.load(open(f))
+      print('Alle JSON-filer er gyldige')"
+    displayName: 'Valider ADF JSON-filer'
