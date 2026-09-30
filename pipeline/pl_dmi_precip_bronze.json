@@ -87,12 +87,10 @@
 		],
 		"parameters": {
 			"from_ts": {
-				"type": "string",
-				"defaultValue": "2025-01-01T00:00:00Z"
+				"type": "string"
 			},
 			"to_ts": {
-				"type": "string",
-				"defaultValue": "2026-01-01T00:00:00Z"
+				"type": "string"
 			},
 			"station_ids": {
 				"type": "array",
