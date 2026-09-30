@@ -39,6 +39,10 @@
 				"06126"
 			]
 		},
+		"tr_daily_export_to_sql_event_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/198b7f8c-d644-4491-a99b-a8850f8cb457/resourceGroups/rg-regn-i-odense/providers/Microsoft.Storage/storageAccounts/regniodense"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -86,6 +90,9 @@
 					},
 					"tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_station_ids": {
 						"value": "[parameters('tr_daily_dmi_properties_pl_dmi_precip_bronze_parameters_station_ids')]"
+					},
+					"tr_daily_export_to_sql_event_properties_typeProperties_scope": {
+						"value": "[parameters('tr_daily_export_to_sql_event_properties_typeProperties_scope')]"
 					}
 				}
 			},
