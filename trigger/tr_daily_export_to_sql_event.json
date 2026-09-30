@@ -1,0 +1,25 @@
+{
+	"name": "tr_daily_export_to_sql_event",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_export_to_sql",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/export/blobs/",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/198b7f8c-d644-4491-a99b-a8850f8cb457/resourceGroups/rg-regn-i-odense/providers/Microsoft.Storage/storageAccounts/regniodense",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
