@@ -22,7 +22,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(formatDateTime(dataset().from_ts, 'yyyyMMdd'), '_', formatDateTime(dataset().to_ts, 'yyyyMMdd'), '.json')",
+					"value": "@concat('dmi/metobs/precip/station=', dataset().station_id, formatDateTime(dataset().from_ts, 'yyyyMMdd'), '_', formatDateTime(dataset().to_ts, 'yyyyMMdd'), '.json')",
 					"type": "Expression"
 				},
 				"folderPath": {
